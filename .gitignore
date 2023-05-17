@@ -1,0 +1,21 @@
+# .pyc
+logs
+*.pyc
+
+/**/__pycache__
+
+static
+templates
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
