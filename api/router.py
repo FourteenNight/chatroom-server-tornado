@@ -1,6 +1,5 @@
 import logging
 import base64
-import traceback
 import functools
 import json
 import tornado.gen

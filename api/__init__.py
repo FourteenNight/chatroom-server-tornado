@@ -1,11 +1,13 @@
+import sys
 import tornado.gen
 from .router import Router
 from .router import BaseHandler
 from .ws import EchoWebSocket,ChatWebSocket,PersonalWebSocket
 from .handler import UserHandler
 from .handler import ChatHandler
-
-
+from .handler import FlierHandler
+from conf import UPLOAD_PATH
+sys.path.append("..")
 class IndexHandler(BaseHandler):
     @tornado.gen.coroutine
     def index(self):
@@ -36,6 +38,13 @@ router.route(method='post', url='/api/rooms/add',
 
 router.route(method='post', url='/api/rooms/del',
              auth=False)(ChatHandler.channelsDel)
+
+# router.uploads_route('/api/file/uploads/(.*)',UPLOAD_PATH)
+router.route(method='post', url='/api/file/uploads',
+             auth=False)(FlierHandler.uploads)
+
+router.route(method='get', url='/api/file/download',
+             auth=False)(FlierHandler.download)
 
 router.ws_route('/ws', EchoWebSocket)
 router.ws_route('/chat', ChatWebSocket)

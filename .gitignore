@@ -3,6 +3,8 @@ logs
 *.pyc
 
 /**/__pycache__
+db/data
+*.yml
 
 static
 templates

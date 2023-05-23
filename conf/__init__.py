@@ -5,6 +5,7 @@ import os
 TEMPLATE_PATH = os.path.join(os.path.abspath(os.getcwd()), 'templates')
 STATIC_PATH = os.path.join(os.path.abspath(os.getcwd()), 'static')
 _CONF_PATH = os.path.join(os.path.abspath(os.getcwd()), 'conf')
+UPLOAD_PATH = TEMPLATE_PATH = os.path.join(os.path.abspath(os.getcwd()), 'db/data')
 # token 设置
 JWT_SECRET = "some_secret_key"  # 加密密钥
 JWT_EXP_DELTA_SECONDS = 86400  # 过期时间为一天
